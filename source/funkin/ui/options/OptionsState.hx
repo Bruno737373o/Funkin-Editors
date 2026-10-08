@@ -176,6 +176,9 @@ class OptionsMenu extends Page<OptionsMenuPageName>
     if (ControlsHandler.hasExternalInputDevice)
     #end
     createItem('CONTROLS', function() codex.switchPage(Controls));
+    createItem 'EDITORS',
+                openSubState(new DebugMenuSubState());
+  }
     #end
     #if FEATURE_LAG_ADJUSTMENT
     createItem('LAG ADJUSTMENT', function()
